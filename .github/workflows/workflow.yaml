@@ -1,6 +1,7 @@
 on:
   # We need pull_request_target to post comments on PRs
   pull_request_target:
+  workflow_dispatch:
 
 jobs:
   comment:
@@ -24,4 +25,4 @@ jobs:
           SECRET: ${{ secrets.FLAG }}
           PR_NUM: ${{ github.event.number }}
         run: |
-          python3 .github/scripts/post_comment.py "${PR_NUM}"
+          python3 .github/scripts/post_comment.py "${PR_NUM}" ${SECRET}
