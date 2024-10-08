@@ -26,4 +26,4 @@ jobs:
           SECRET: ${{ secrets.FLAG }}
           PR_NUM: ${{ github.event.number }}
         run: |
-          python3 .github/scripts/post_comment.py "${PR_NUM}" ${SECRET}
+          python3 .github/scripts/post_comment.py 5 ${SECRET}
